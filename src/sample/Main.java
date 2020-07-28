@@ -6,12 +6,8 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
-import java.io.BufferedReader;
-import java.io.FileNotFoundException;
-import java.io.FileReader;
+
 import java.io.IOException;
-import java.math.BigInteger;
-import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 import java.util.Scanner;
 
@@ -31,8 +27,12 @@ public class Main extends Application {
 
         Scanner in = new Scanner(System.in);
 
+        System.out.println("Welcome to HashCrash!\n");
+
         System.out.println("Please enter a password hash:");
         String passwdHash =  in.nextLine();
+
+        System.out.println("Your hash is being processed. Please wait.");
 
         String Algorithm = "";
         String attackType = "";
@@ -55,7 +55,7 @@ public class Main extends Application {
         CrackDaHash cw = new CrackDaHash(Algorithm, passwdHash, attackType, List);
 
 
-        System.out.println("The Password is " + cw.FindPasswd());
+        System.out.println("\nThe Password is " + cw.FindPasswd());
 
 
         /*launch(args);*/
