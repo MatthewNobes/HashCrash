@@ -1,21 +1,15 @@
 package sample;
 
 public class algorithm {
-    /*Sets a string for the parts of the pizza */
 
     private String hash;
 
-
-
-
-
     public algorithm(String hash) {
-        /*Sets all the varaibles about the pizza */
         this.hash = hash;
     }
 
     public String FindAlgorithm() {
-
+        //Compares the length of the user hash to determine the algorithm used.
         if (this.hash.length() == 32)  {
             return "MD5";
         }

@@ -9,7 +9,6 @@ import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 
 public class CrackDaHash {
-    /*Sets a string for the parts of the pizza */
     private String algorithm;
     private String hash;
     private String method;
@@ -19,7 +18,7 @@ public class CrackDaHash {
 
 
     public CrackDaHash(String algorithm, String hash, String method,  String list){
-        /*Sets all the varaibles about the pizza */
+        /*Sets all the varaibles about the crack */
         this.algorithm = algorithm;
         this.hash = hash;
         this.method = method;
@@ -27,14 +26,12 @@ public class CrackDaHash {
     }
 
     public String FindPasswd() {
-        String password = "Not Found";
-
 
         try {
-            // create a reader instance
+            // Newreader instance
             BufferedReader br = new BufferedReader(new FileReader("Lists\\List1.txt.txt"));
 
-            // read until end of file
+            // reads each line, runs the hash function on it and compares to the user given one.
             String line;
             while ((line = br.readLine()) != null) {
 
@@ -65,7 +62,7 @@ public class CrackDaHash {
             ex.printStackTrace();
         }
 
-        return password;
+        return "Not Found";
     }
 
 
