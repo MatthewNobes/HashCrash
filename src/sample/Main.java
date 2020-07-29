@@ -32,18 +32,19 @@ public class Main extends Application {
         System.out.println("Please enter a password hash:");
         String passwdHash =  in.nextLine();
 
+        algorithm ab = new algorithm(passwdHash);
+
+        String usedAlgorithm = ab.FindAlgorithm();
+
         System.out.println("Your hash is being processed. Please wait.");
 
-        String Algorithm = "";
+
         String attackType = "";
         String List = "";
 
         
 
         /* Inputs not coded for yet.
-        System.out.println("Please enter the Algorithm used:");
-        String Algorithm =  in.nextLine();
-
         System.out.println("Please enter the attack type:");
         String attackType =  in.nextLine();
 
@@ -52,7 +53,7 @@ public class Main extends Application {
 
          */
 
-        CrackDaHash cw = new CrackDaHash(Algorithm, passwdHash, attackType, List);
+        CrackDaHash cw = new CrackDaHash(usedAlgorithm , passwdHash, attackType, List);
 
 
         System.out.println("\nThe Password is " + cw.FindPasswd());

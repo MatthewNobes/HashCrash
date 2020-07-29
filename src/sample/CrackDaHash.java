@@ -40,7 +40,7 @@ public class CrackDaHash {
 
                 byte[] bytesOfMessage = line.getBytes("UTF-8");
 
-                MessageDigest md = MessageDigest.getInstance("MD5");
+                MessageDigest md = MessageDigest.getInstance(this.algorithm);
                 byte[] thedigest = md.digest(bytesOfMessage);
 
                 // Convert byte array into signum representation
@@ -67,5 +67,6 @@ public class CrackDaHash {
 
         return password;
     }
+
 
 }
